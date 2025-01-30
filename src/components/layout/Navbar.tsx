@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-import { Search, Menu } from "lucide-react";
+import { Search, Menu, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/use-theme";
 
 const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <nav className="fixed top-0 w-full z-50 glass-card">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold">
+        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
           AI Directory
         </Link>
         
@@ -23,13 +26,22 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
+          <Button variant="ghost" size="icon" onClick={toggleTheme}>
+            {theme === 'dark' ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </Button>
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
           </Button>
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />
           </Button>
-          <Button className="hidden md:inline-flex">Sign In</Button>
+          <Button className="hidden md:inline-flex gradient-border">
+            Sign In
+          </Button>
         </div>
       </div>
     </nav>
