@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, Menu, Sun, Moon } from "lucide-react";
+import { Search, Menu, Sun, Moon, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 
@@ -22,6 +22,10 @@ const Navbar = () => {
           </Link>
           <Link to="/dashboard" className="hover:text-primary transition-colors">
             Dashboard
+          </Link>
+          <Link to="/admin" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Shield className="h-4 w-4" />
+            Admin
           </Link>
         </div>
 
