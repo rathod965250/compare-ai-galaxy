@@ -40,9 +40,14 @@ const Navbar = () => {
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
           </Button>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
-          </Button>
+          <div className="md:hidden flex items-center space-x-4">
+            <Link to="/admin" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Shield className="h-4 w-4" />
+            </Link>
+            <Button variant="ghost" size="icon">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </div>
           <Button className="hidden md:inline-flex gradient-border">
             Sign In
           </Button>
